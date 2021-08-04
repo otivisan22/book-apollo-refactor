@@ -21,7 +21,7 @@ const SignupForm = () => {
     onCompleted: (data) => {
       const { token, user } = data.signup;
       console.log(user);
-      Auth.login(token);
+      Auth.signup(token);
     },
     onError: (error) => {
       console.log(error.message);

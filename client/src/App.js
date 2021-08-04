@@ -8,10 +8,12 @@ import {
   ApolloProvider,
   InMemoryCache,
   createHttpLink,
+  useQuery,
+  gql,
 } from "@apollo/client";
 
 const httpLink = createHttpLink({
-  uri: process.env.GRAPHQL_URL || "http://localhost:4000/graphql",
+  uri: process.env.GRAPHQL_URL || "http://localhost:3001/graphql",
 });
 const authLink = setContext((_, { headers }) => {
   const token = JSON.parse(localStorage.getItem("id_token"));
