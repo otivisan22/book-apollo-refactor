@@ -1,4 +1,5 @@
 const { User } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const login = async (_, { input }) => {
   const { email, password } = input;
