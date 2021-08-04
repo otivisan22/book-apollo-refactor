@@ -13,7 +13,13 @@ const login = async (_, { input }) => {
     throw new AuthenticationError("Invalid Password");
   }
 
-  const token = signToken({ email, id });
+  const token = signToken({
+    id: user._id,
+    email: user.email,
+    username: user.username,
+  });
+
+  return { token, user };
 };
 
 module.exports = login;
