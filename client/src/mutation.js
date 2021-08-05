@@ -29,18 +29,17 @@ export const SIGNUP = gql`
 export const SAVE_BOOK = gql`
   mutation Mutation($saveBookInput: SaveBookInput!) {
     saveBook(input: $saveBookInput) {
-        _id
-        username
-        email
-        bookCount
-        savedBooks{
-          bookId
-          authors
-          description
-          title
-          image
-          link
-        }
+      _id
+      username
+      email
+      bookCount
+      savedBooks {
+        bookId
+        authors
+        description
+        title
+        image
+        link
       }
     }
   }

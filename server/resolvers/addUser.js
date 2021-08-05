@@ -10,9 +10,6 @@ const addUser = async (_, { input }) => {
   if (!user) {
     const newUser = await User.create({ username, email, password });
 
-    if (!newUser) {
-      throw newAuthenticationError("Something went wrong");
-    }
     const token = signToken({
       email: newUser.email,
       id: newUser._id,
@@ -21,7 +18,7 @@ const addUser = async (_, { input }) => {
 
     return { token, user: newUser };
   } else {
-    throw newAuthenticationError("User already exist!");
+    throw new AuthenticationError("User already exist!");
   }
 };
 
