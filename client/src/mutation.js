@@ -34,3 +34,5 @@ export const SIGNUP = gql`
     }
   }
 `;
+
+export const SAVEBOOK = gql;
