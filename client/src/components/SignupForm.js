@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import { SignupForm } from "./SignupForm";
 import { createUser } from "../utils/API";
+import { SIGNUP } from "../mutation";
 import Auth from "../utils/auth";
 
 const SignupForm = () => {
@@ -18,7 +19,7 @@ const SignupForm = () => {
 
   const [signup, { data, error, loading }] = useMutation(SIGNUP, {
     onCompleted: (data) => {
-      const { token, user } = data.signup;
+      const { token, user } = data.addUser;
       console.log(user);
       Auth.signup(token);
     },
@@ -46,7 +47,7 @@ const SignupForm = () => {
     try {
       await signup({
         variables: {
-          signInput: userFormData,
+          addUserInput: userFormData,
         },
       });
     } catch (err) {
