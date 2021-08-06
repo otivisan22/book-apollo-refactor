@@ -1,5 +1,4 @@
 const { AuthenticationError } = require("apollo-server-express");
-
 const { User } = require("../models");
 
 const getSingleUser = async (_, args, context) => {
@@ -16,7 +15,7 @@ const getSingleUser = async (_, args, context) => {
   // if user is not in the context throw error
   else {
     throw new AuthenticationError(
-      "You are not authorised to perform this operation"
+      "You are not authorized to perform this operation"
     );
   }
 };
