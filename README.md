@@ -5,7 +5,10 @@
 - [Client](#client)
 - [Server](#server)
   - [Running the project](#running-the-project)
-  - [Screenshots](#screenshots)
+  - [Variables](#variables)
+  - [Query](#query)
+- [me](#me)
+  - [Screenshoots](#screenshoots)
 
 ## Project Link
 
@@ -56,7 +59,57 @@ $ npm run watch
 
 ```
 
-## Screenshots
+## Variables
+
+```
+{
+  "addUserInput": {
+    "username": "ov2",
+    "email": "ov2@email.com",
+    "password": "password222"
+  },
+  "loginInput": {
+    "email": "bob.smith@email.com",
+    "password": "password123"
+  },
+  "saveBookInput": {
+    "bookId": "555",
+    "authors": ["Oti Visan"],
+    "title": "Coding with Oti",
+    "description": "react.js graphql",
+    "image": "foo bar",
+    "link": "rockingthegraphql.com"
+  },
+  "removeBookBookId": "123"
+}
+
+```
+
+## Query
+
+# me
+
+```
+query Query {
+  me {
+    _id
+    username
+    email
+    bookCount
+    savedBooks {
+      bookId
+      authors
+      description
+      title
+      image
+      link
+    }
+  }
+}
+
+```
+
+## Screenshoots
 
 ![screenshots1](src/models/../public/icons/image1.png)
 ![screenshots2](src/models/../public/icons/image2.png)
