@@ -8,6 +8,11 @@
   - [Variables](#variables)
   - [Query](#query)
 - [me](#me)
+  - [Mutation](#mutation)
+- [AddUser](#adduser)
+- [Login](#login)
+- [SaveBook](#savebook)
+- [RemoveBook](#removebook)
   - [Screenshoots](#screenshoots)
 
 ## Project Link
@@ -109,8 +114,106 @@ query Query {
 
 ```
 
+## Mutation
+
+# AddUser
+
+```
+mutation Mutation($addUserInput: AddUserInput!) {
+  addUser(input: $addUserInput) {
+    token
+    user {
+      _id
+      username
+      email
+      bookCount
+      savedBooks {
+        bookId
+        authors
+        description
+        title
+        image
+        link
+      }
+    }
+  }
+}
+
+```
+
+# Login
+
+```
+mutation Mutation($loginInput: LoginInput!) {
+  login(input: $loginInput) {
+    token
+    user {
+      _id
+      username
+      email
+      bookCount
+      savedBooks {
+        bookId
+        authors
+        description
+        title
+        image
+        link
+      }
+    }
+  }
+}
+
+```
+
+# SaveBook
+
+```
+mutation Mutation($saveBookInput: SaveBookInput!) {
+  saveBook(input: $saveBookInput) {
+    _id
+    username
+    email
+    bookCount
+    savedBooks {
+      bookId
+      authors
+      description
+      title
+      image
+      link
+    }
+  }
+}
+
+```
+
+# RemoveBook
+
+```
+mutation Mutation($removeBookBookId: ID!) {
+  removeBook(bookId: $removeBookBookId) {
+    _id
+    username
+    email
+    bookCount
+    savedBooks {
+      bookId
+      authors
+      description
+      title
+      image
+      link
+    }
+  }
+}
+
+```
+
 ## Screenshoots
 
-![screenshots1](src/models/../public/icons/image1.png)
-![screenshots2](src/models/../public/icons/image2.png)
-![screenshots3](src/models/../public/icons/image3.png)
+![screenshots1](server/images/book1.png)
+![screenshots2](server/images/book2.png)
+![screenshots3](server/images/book3.png)
+![screenshots4](server/images/book4.png)
+![screenshots5](server/images/book5.png)
