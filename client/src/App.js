@@ -14,7 +14,7 @@ import {
 } from "@apollo/client";
 
 const httpLink = createHttpLink({
-  uri: process.env.GRAPHQL_URL || "http://localhost:3001/graphql",
+  uri: "/graphql",
 });
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
